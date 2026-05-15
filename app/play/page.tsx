@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useGameState } from "@/lib/useGameState";
 import MapCanvas from "@/components/MapCanvas";
 import QuestionCard from "@/components/QuestionCard";
@@ -35,7 +35,7 @@ function AlreadyPlayedScreen({ resetIn }: { resetIn: string }) {
   );
 }
 
-export default function PlayPage() {
+function PlayPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const calibrating = searchParams.get("calibrate") === "1";
@@ -141,5 +141,13 @@ export default function PlayPage() {
         </div>
       </main>
     </div>
+  );
+}
+
+export default function PlayPageWrapper() {
+  return (
+    <Suspense>
+      <PlayPage />
+    </Suspense>
   );
 }
