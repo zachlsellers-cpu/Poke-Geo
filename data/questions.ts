@@ -507,7 +507,9 @@ export const questions: Question[] = [
     difficulty: 5,
     category: "Catch Locations",
     answer_location: "Seven Island",
-    coordinates: { x: 90.0, y: 90.0 },
+    coordinates: { x: 4.0, y: 4.0 },
+    off_map: true,
+    map_hint: "Seven Island is a Sevii Island not shown on this map — click the top-left corner.",
     lore_explanation:
       "The Tanoby Ruins on Seven Island contained chambers where different forms of Unown could be found. To unlock them, players had to solve the Tanoby Key puzzle on the same island — a Strength boulder puzzle almost no one discovered without a guide.",
   },
